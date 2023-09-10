@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,3 +12,18 @@ import { FilesMenuComponent } from './files-menu/files-menu.component';
   exports: [UploadFilesComponent, FilesMenuComponent],
 })
 export class UploadFilesModule {}
+=======
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { UploadFilesComponent } from './upload-files.component';
+import { FilesMenuComponent } from './files-menu/files-menu.component';
+
+@NgModule({
+  declarations: [UploadFilesComponent, FilesMenuComponent],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  exports: [UploadFilesComponent, FilesMenuComponent],
+})
+export class UploadFilesModule {}
+>>>>>>> 2cfd18384cffe46cb45fed2b848bf6c2824d438d
