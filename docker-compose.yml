@@ -9,7 +9,7 @@ services:
     
     # volumes:
     #   - "/app/node_modules"
-      # - "./upload-webapp:/app"
+    #   - "./upload-webapp:/app"
     entrypoint: ["npm","run","startdkr"]
     ports:
         - "4200:4200"

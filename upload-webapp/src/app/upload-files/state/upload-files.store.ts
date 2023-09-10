@@ -6,7 +6,7 @@ export interface UploadFilesState extends EntityState<UploadFile> {}
 
 @Injectable({ providedIn: 'root' })
 @StoreConfig({ name: 'upload-files' })
-export class UploadFilesStore extends EntityStore<UploadFilesState> {
+export class UploadFilesStore extends EntityStore<UploadFilesState, UploadFile> {
   constructor() {
     super();
   }

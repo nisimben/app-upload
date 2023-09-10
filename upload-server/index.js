@@ -1,16 +1,17 @@
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const fs = require("fs"); 
 
 const app = express();
 
-//add other middleware
+// add other middleware
 app.use(cors());
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/my-files", express.static("my-files"));
 
-//start app
+// start app
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => console.log(`App is listening on port ${port}.`));
@@ -23,7 +24,7 @@ app.post("/uploads-file", async (req, res) => {
         message: "No file uploaded",
       });
     } else {
-      require("fs").writeFile(
+      fs.writeFile(
         "./my-files/" + req.body.fileName,
         req.body.file.content,
         { encoding: "base64", flag: "wx" },
@@ -53,15 +54,14 @@ app.post("/uploads-file", async (req, res) => {
 
 app.get("/file-storage", async (req, res) => {
   try {
-    require("fs").readdir("./my-files/", function (err, data) {
+    fs.readdir("./my-files/", function (err, data) {
       if (err) {
         return res.status(500).send({
           status: false,
           message: err,
         });
       } else {
-        let list = data.filter((file) => file !== ".gitkeep");
-        list = list.map((file) => {
+        let list = data.filter((file) => file !== ".gitkeep").map((file) => {
           return {
             id: file,
             fileName: file,
