@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+  web_app:
+    container_name: web_app
+    restart: always
+    build: 
+        context: ./upload-webapp
+        dockerfile: ./Dockerfile
+    
+    # volumes:
+    #   - "/app/node_modules"
+      # - "./upload-webapp:/app"
+    entrypoint: ["npm","run","startdkr"]
+    ports:
+        - "4200:4200"
+         
+  web_server:
+    container_name: web_server
+    restart: always
+    build: 
+        context: ./upload-server
+        dockerfile: Dockerfile
+    
+    # volumes:
+    #   - "/app/node_modules"
+    #   - "./upload-server:/app"
+    entrypoint: ["npm","run","start"]
+    ports:
+        - "3000:3000"       
