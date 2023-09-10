@@ -19,7 +19,6 @@
           <img
             src="/assets/svg/upload-svg.svg"
             class="upload-icon"
-            accept="doc,docx,pdf"
             alt="Upload file"
           />
         </div>
@@ -27,7 +26,7 @@
         <input
           type="file"
           id="file-upload"
-          accept="pdf ,doc, docx"
+          accept=" .pdf, .doc, .docx"
           formControlName="selectFile"
           (change)="onFileChange($event)"
         />
