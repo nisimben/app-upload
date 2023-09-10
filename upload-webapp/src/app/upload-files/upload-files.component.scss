@@ -1,0 +1,84 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 98vh;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+.file-name {
+  display: flex;
+  width: 300px;
+  padding: 1em;
+  margin: 1em;
+  font-size: 14px;
+  text-align: center;
+}
+
+.file-upload {
+  display: flex;
+  padding: 1em;
+  justify-content: space-evenly;
+  align-items: center;
+  cursor: pointer;
+}
+
+#file-upload {
+  display: none;
+}
+
+.file-btn {
+  display: block;
+  padding: 0.5em 2em;
+  margin: 1em auto;
+  font-size: 18px;
+  direction: rtl;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  color: #555;
+  cursor: pointer;
+  &:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+  }
+}
+
+.file-name-to-upload {
+  color: #777;
+  text-align: center;
+}
+
+.success {
+  color: green;
+  text-align: center;
+}
+
+.fail {
+  color: red;
+  text-align: center;
+  direction: rtl;
+}
+
+fieldset {
+  border: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.2;
+    transform: scale(1.01) translate(0, -0.5em);
+  }
+  0% {
+    opacity: 0.8;
+  }
+}
+
+.anim {
+  animation: blink 1s ease-in-out infinite;
+}
